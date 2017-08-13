@@ -9,7 +9,7 @@ class Tester
 
       string.each_char do |chr|
         chr = chr.downcase
-        if alpha.index(chr) != nil
+        if alpha.include?(chr)
           str += chr
         end
       end
@@ -24,7 +24,7 @@ class Tester
       return false if !string.is_a?(String)
       return false if string.length == 0
       i = 0
-      j = string.length - 1
+      j = -1
 
       while i < string.length / 2
         if !string[i].match(/^[[:alpha:]]$/)
